@@ -17,74 +17,89 @@ export default function Footer() {
             </Link>
           </div>
           <div className="footer-social-icons-wrapper">
-            <a
+            <Link
               href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-icon"
             >
               
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-icon"
             >
               
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.instagram.com/legal_pathway_immigration?igsh=MnlhaGpxaTdodzdj"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-icon last-child"
             >
               
-            </a>
+            </Link>
           </div>
         </div>
         <div className="footer-wrapper">
           <div className="footer-links-wrapper">
-            <h5 className="white-text mb-15">Products</h5>
-            <a href="/apply" className="footer-link">
-              Application
-            </a>
-            <a
-              href="/status"
+            <h5 className="white-text mb-15">Visa Service</h5>
+            <Link href="/visa-application/#work" className="footer-link">
+              Business Visa
+            </Link>
+            <Link
+              href="/visa-application/#study"
               aria-current="page"
               className="footer-link w--current"
             >
-              Track Application
-            </a>
-            <a href="/blog" className="footer-link">
-              Blog
-            </a>
+              Family Visa
+            </Link>
+            <Link href="visa-application/#work" className="footer-link">
+              Work Permit Visa
+            </Link>
+            <Link href="/visa-application/#study" className="footer-link">
+              Study Visa
+            </Link>
+            <Link href="/visa-application/#travel" className="footer-link">
+              Travel Visa
+            </Link>
+            <Link href="/visa-application/#citizenship" className="footer-link">
+              Citizenship Visa
+            </Link>
           </div>
           <div className="footer-links-wrapper">
-            <h5 className="white-text mb-15">About</h5>
-            <a href="/our-team" className="footer-link">
-              Our Team
-            </a>
-            <a href="/career" className="footer-link">
-              Career
-            </a>
-            <a href="/contact-us" className="footer-link">
+            <h5 className="white-text mb-15">Quick Links</h5>
+            <Link href="/" className="footer-link">
+              Home
+            </Link>
+            <Link href="#" className="footer-link">
+              News/Blog
+            </Link>
+            <Link href="/contact-us" className="footer-link">
               Contact Us
-            </a>
+            </Link>
           </div>
           <div className="footer-links-wrapper">
-            <h5 className="white-text mb-15">Explore</h5>
-            <a href="/visa" className="footer-link">
+            <h5 className="white-text mb-15">Organization</h5>
+            <Link href="/visa-application" className="footer-link">
               Visa
-            </a>
-            <a href="/services" className="footer-link">
+            </Link>
+            <Link href="/our-services" className="footer-link">
               Our Services
-            </a>
-            <a href="/coachings" className="footer-link">
+            </Link>
+            <Link href="/about" className="footer-link">
+              About Us
+            </Link>
+            <Link href="/apply" className="footer-link">
+              Free Assessment
+            </Link>
+            {/* <Link href="/coachings" className="footer-link">
               Coaching
-            </a>
+            </Link> */}
           </div>
-          <div className="footer-form-wrapper">
+          {/* <div className="footer-form-wrapper">
             <h5 className="white-text mb-15">Stay Tuned</h5>
             <p className="footer-form-description">
               Subscribe to our newsletter and never miss our news.
@@ -120,14 +135,12 @@ export default function Footer() {
                 <div>Oops! Something went wrong while submitting the form</div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="footer-bottom-wrapper">
           <div className="footer-copyright">
             © Legal Pathway Immigration Firm. All Rights Reserved 2025.{" "}
-            <a href="/coachings" className="footer-copyright">
-              Licensing
-            </a>
+            <span className="footer-copyright">Licensing</span>
           </div>
         </div>
       </div>

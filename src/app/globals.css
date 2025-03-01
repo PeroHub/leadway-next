@@ -2340,6 +2340,14 @@ blockquote {
   display: flex;
 }
 
+.b-con {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .base-container.align-left {
   align-items: flex-start;
 }

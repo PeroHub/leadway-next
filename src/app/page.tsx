@@ -8,7 +8,7 @@ import AdvantagesSection from "@/components/AdvantagesSection";
 import VideoSection from "@/components/VideoSection";
 import FAQSection from "@/components/FAQSection";
 import LatestNewsSection from "@/components/LatestNewsSection";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="grid">
@@ -29,7 +29,7 @@ export default function Home() {
       <div className="mb-20">
         <LatestNewsSection />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

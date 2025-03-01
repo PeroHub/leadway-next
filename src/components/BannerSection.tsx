@@ -27,7 +27,7 @@ export default function BannerSection() {
           style={{ opacity: 1 }}
           className="buttons-wrapper"
         >
-          <a href="" className="primary-button w-button">
+          <a href="/apply" className="primary-button w-button">
             Start Application
           </a>
         </div>

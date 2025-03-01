@@ -71,7 +71,10 @@ export default function Navbar() {
                 </div>
                 {/* Dropdown content can be added here */}
               </div>
-              <Link href="/visas" className="nav-link white-style w-nav-link">
+              <Link
+                href="/visa-application"
+                className="nav-link white-style w-nav-link"
+              >
                 Visa Application
               </Link>
               <Link href="/privacy" className="nav-link white-style w-nav-link">
@@ -82,7 +85,7 @@ export default function Navbar() {
                 data-delay="0"
                 className="nav-dropdown w-dropdown"
               >
-                <div
+                {/* <div
                   className="nav-dropdown-toggle w-dropdown-toggle"
                   id="w-dropdown-toggle-2"
                   aria-controls="w-dropdown-list-2"
@@ -95,15 +98,15 @@ export default function Navbar() {
                     aria-hidden="true"
                   ></div>
                   <p className="nav-item-title white-style">Tools</p>
-                </div>
+                </div> */}
                 {/* Dropdown content can be added here */}
               </div>
-              <Link href="#" className="nav-link white-style w-nav-link">
+              {/* <Link href="#" className="nav-link white-style w-nav-link">
                 Sign In
-              </Link>
-              <Link href="#" className="nav-link white-style w-nav-link">
+              </Link> */}
+              {/* <Link href="#" className="nav-link white-style w-nav-link">
                 Create Account
-              </Link>
+              </Link> */}
               <div className="button-wrapper">
                 <Link
                   href="/status"
@@ -143,23 +146,26 @@ export default function Navbar() {
           <Link href="/contact-us" className="nav-link white-style w-nav-link">
             Contact Us
           </Link>
-          <Link href="/visas" className="nav-link white-style w-nav-link">
+          <Link
+            href="/visa-application"
+            className="nav-link white-style w-nav-link"
+          >
             Visa Application
           </Link>
           <Link href="/privacy" className="nav-link white-style w-nav-link">
             Privacy Policy
           </Link>
-          <Link href="#" className="nav-link white-style w-nav-link">
+          {/* <Link href="#" className="nav-link white-style w-nav-link">
             Sign In
-          </Link>
-          <Link href="#" className="nav-link white-style w-nav-link">
+          </Link> */}
+          {/* <Link href="#" className="nav-link white-style w-nav-link">
             Create Account
-          </Link>
-          <div className="button-wrapper">
+          </Link> */}
+          {/* <div className="button-wrapper">
             <Link href="/status" className="primary-button nav-tablet w-button">
               Track Application
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
 
