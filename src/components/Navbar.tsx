@@ -77,6 +77,12 @@ export default function Navbar() {
               >
                 Visa Application
               </Link>
+              <Link
+                href="/track-visa"
+                className="nav-link white-style w-nav-link"
+              >
+                Track Visa
+              </Link>
               <Link href="/privacy" className="nav-link white-style w-nav-link">
                 Privacy Policy
               </Link>
@@ -151,6 +157,9 @@ export default function Navbar() {
             className="nav-link white-style w-nav-link"
           >
             Visa Application
+          </Link>
+          <Link href="/track-visa" className="nav-link white-style w-nav-link">
+            Track Visa
           </Link>
           <Link href="/privacy" className="nav-link white-style w-nav-link">
             Privacy Policy
