@@ -1,59 +1,89 @@
 "use client";
+
+import { useState } from "react";
 import Head from "next/head";
+import { Button } from "@radix-ui/themes";
 // import Image from "next/image";
 
-const visas = [
+const sections = [
   {
-    id: 1,
-    title: "Temporary Visa",
-    icon: "/path/to/icon1.png",
-    files: [
-      "Upload your completed general assessment form",
-      "Upload your International Passport",
-      "Upload your passport photograph",
-      "Upload birth certificate file",
-      "Upload your marriage certificate",
+    title: "General Immigration Assessment Form",
+    fields: [
+      "Full Name",
+      "Email",
+      "Phone Number",
+      "Country of Residence",
+      "Reason for Immigration",
     ],
   },
   {
-    id: 2,
-    title: "Permanent Visa",
-    icon: "/path/to/icon2.png",
-    files: ["Proof of Funds", "Medical Report", "Police Clearance"],
+    title: "Family Visa Immigration Assessment Form",
+    fields: [
+      "Applicant Name",
+      "Relationship to Sponsor",
+      "Sponsor Name",
+      "Country of Residence",
+      "Immigration Purpose",
+    ],
   },
   {
-    id: 3,
-    title: "Study Visa",
-    icon: "/path/to/icon3.png",
-    files: ["Admission Letter", "Tuition Payment Receipt", "Bank Statement"],
+    title: "Business Visa Immigration Assessment Form",
+    fields: [
+      "Full Name",
+      "Company Name",
+      "Business Type",
+      "Country of Business",
+      "Investment Amount",
+    ],
   },
   {
-    id: 4,
-    title: "Permanent Resident",
-    icon: "/path/to/icon4.png",
-    files: ["Employment Record", "Residency Form"],
+    title: "Study Visa Immigration Assessment Form",
+    fields: [
+      "Student Name",
+      "Institution Name",
+      "Course of Study",
+      "Duration",
+      "Country of Study",
+    ],
   },
   {
-    id: 5,
-    title: "Citizenship by Investment",
-    icon: "/path/to/icon5.png",
-    files: ["Investment Proof", "Business Registration Certificate"],
+    title: "Sponsorship Visa Immigration Assessment Form",
+    fields: [
+      "Applicant Name",
+      "Sponsor Name",
+      "Relationship",
+      "Country",
+      "Purpose of Sponsorship",
+    ],
   },
   {
-    id: 6,
-    title: "Family Visa",
-    icon: "/path/to/icon6.png",
-    files: ["Marriage Certificate", "Birth Certificate"],
-  },
-  {
-    id: 7,
-    title: "Work Permit Visa",
-    icon: "/path/to/icon7.png",
-    files: ["Job Offer Letter", "Work Contract"],
+    title: "Work Permit Visa Immigration Assessment Form",
+    fields: [
+      "Full Name",
+      "Employer Name",
+      "Job Title",
+      "Work Country",
+      "Work Duration",
+    ],
   },
 ];
 
 export default function Apply() {
+  const [uploadedFiles, setUploadedFiles] = useState<
+    Record<string, File | null>
+  >({});
+
+  const handleFileChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    sectionTitle: string
+  ) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setUploadedFiles((prev) => ({
+        ...prev,
+        [sectionTitle]: e.target.files[0],
+      }));
+    }
+  };
   return (
     <>
       <Head>
@@ -72,74 +102,48 @@ export default function Apply() {
           </div>
         </div>
       </div>
-      <section>
-        <div
-          className="max-w-5xl mx-auto p-6 bg-white text-black"
-          style={{ margin: "40px auto" }}
-        >
-          <h1 className="font-bold mb-4 text-2xl">
-            Immigration Assessment Forms
-          </h1>
-          <p className="mb-4">
-            Please complete the form below to provide your details for
-            assessment.
-          </p>
-          {visas.map((visa) => (
-            <VisaForm key={visa.id} title={visa.title} files={visa.files} />
-          ))}
-        </div>
+      <section className="p-6 max-w-3xl mx-auto">
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          Immigration Assessment Forms
+        </h1>
+        <p className="mb-6 text-gray-600">
+          Please select the relevant form below and fill out the necessary
+          details for your application.
+        </p>
+        {sections.map((section, index) => (
+          <div
+            key={index}
+            className="mb-8 p-4 border rounded-lg bg-white shadow"
+          >
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              {section.title}
+            </h2>
+            <form className="space-y-4">
+              {section.fields.map((field, i) => (
+                <div key={i}>
+                  <label className="text-gray-700">{field}</label>
+                  <input
+                    type="text"
+                    className="mt-1 block w-full"
+                    placeholder={`Enter ${field}`}
+                  />
+                </div>
+              ))}
+              <div>
+                <label className="text-gray-700">Upload Documents</label>
+                <input
+                  type="file"
+                  className="mt-1 block w-full"
+                  onChange={(e) => handleFileChange(e, section.title)}
+                />
+              </div>
+              <Button className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+                Submit
+              </Button>
+            </form>
+          </div>
+        ))}
       </section>
     </>
-  );
-}
-
-function VisaForm({ title, files }: { title: string; files: string[] }) {
-  return (
-    <div className="mb-10 border-t border-gray-100 py-10 pt-6">
-      <h2 className="font-semibold mb-4 text-xl">{title}</h2>
-      <p className="text-gray-600 mb-4">Upload your required documents here:</p>
-      <form className="">
-        {files.map((file, index) => (
-          <FileInput key={index} label={file} />
-        ))}
-        <Input label="Additional Information" type="text" />
-        <div
-          className="bg-[#FF5400] w-50 text-center mt-10  text-white"
-          style={{ marginTop: "15px", padding: "10px", marginBottom: "40px" }}
-        >
-          Submit
-        </div>
-      </form>
-    </div>
-  );
-}
-
-function Input({ label, type }: { label: string; type: string }) {
-  return (
-    <div style={{ marginTop: "20px" }}>
-      <label className="block font-medium mb-1 text-gray-700">{label}</label>
-
-      <input
-        type={type}
-        style={{ padding: "10px" }}
-        placeholder="You may provide more infomation here."
-        className="w-full p-2 border rounded-md"
-        required
-      />
-    </div>
-  );
-}
-
-function FileInput({ label }: { label: string }) {
-  return (
-    <div style={{ marginTop: "20px" }}>
-      <label className="block text-gray-700 font-medium">{label}</label>
-      <input
-        type="file"
-        style={{ padding: "10px" }}
-        className="bg-gray-300 border-none rounded-md focus:outline-none focus:ring-2"
-        required
-      />
-    </div>
   );
 }
