@@ -1,59 +1,265 @@
 "use client";
-import Head from "next/head";
-// import Image from "next/image";
 
-const visas = [
+import { useState } from "react";
+import Head from "next/head";
+import { FaArrowAltCircleRight, FaDownload, FaTimes } from "react-icons/fa";
+import Image from "next/image";
+
+const otherImmigration = [
   {
-    id: 1,
-    title: "Temporary Visa",
-    icon: "/path/to/icon1.png",
-    files: [
+    icon: <FaArrowAltCircleRight />,
+    text: "Business Visa Immigration Assessment Form",
+  },
+  {
+    icon: <FaArrowAltCircleRight />,
+    text: "Study Visa Immigration Assessment Form",
+  },
+  {
+    icon: <FaArrowAltCircleRight />,
+    text: "Family Visa Immigration Assessment Form",
+  },
+  {
+    icon: <FaArrowAltCircleRight />,
+    text: "Sponsorship Visa Immigration Assessment Form",
+  },
+  {
+    icon: <FaArrowAltCircleRight />,
+    text: "General Immigration Assessment Form",
+  },
+  {
+    icon: <FaArrowAltCircleRight />,
+    text: "Work Permit Visa Immigration Assessment Form",
+  },
+];
+
+const sections = [
+  {
+    title: "General Immigration Assessment Form",
+    fields: [
       "Upload your completed general assessment form",
       "Upload your International Passport",
       "Upload your passport photograph",
       "Upload birth certificate file",
       "Upload your marriage certificate",
     ],
+    downloadLink:
+      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.generalvisa.pdf",
+    instruction:
+      "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
   {
-    id: 2,
-    title: "Permanent Visa",
-    icon: "/path/to/icon2.png",
-    files: ["Proof of Funds", "Medical Report", "Police Clearance"],
+    title: "Family Visa Immigration Assessment Form",
+    fields: [
+      "Upload your completed family visa assessment form",
+      "Upload your International Passport",
+      "Upload your passport photograph",
+      "Upload birth certificate file",
+      "Upload your marriage certificate",
+      "Upload your financial documents ",
+      "Upload your medical examination reports",
+    ],
+    downloadLink:
+      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.familyvisa.pdf",
+    instruction:
+      "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
   {
-    id: 3,
-    title: "Study Visa",
-    icon: "/path/to/icon3.png",
-    files: ["Admission Letter", "Tuition Payment Receipt", "Bank Statement"],
+    title: "Business Visa Immigration Assessment Form",
+    fields: [
+      "Upload your completed business visa assessment form",
+      "Upload your International Passport",
+      "Upload your passport photograph",
+      "Upload birth certificate file",
+      "Upload your business registration document",
+      "Upload your financial documents",
+      "Upload your proof of investment or assets",
+      "Upload your business plan",
+    ],
+    downloadLink:
+      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.businessvisa.pdf",
+    instruction:
+      "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
   {
-    id: 4,
-    title: "Permanent Resident",
-    icon: "/path/to/icon4.png",
-    files: ["Employment Record", "Residency Form"],
+    title: "Study Visa Immigration Assessment Form",
+    fields: [
+      "Upload your completed study visa assessment form",
+      "Upload your International Passport",
+      "Upload your passport photograph",
+      "Upload birth certificate file",
+      "Upload your acceptance letter",
+      "Upload your financial documents",
+      "Upload your proof of english proficiency",
+      "Upload your medical examination reports",
+    ],
+    downloadLink:
+      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.businessvisa.pdf",
+    instruction:
+      "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
   {
-    id: 5,
-    title: "Citizenship by Investment",
-    icon: "/path/to/icon5.png",
-    files: ["Investment Proof", "Business Registration Certificate"],
+    title: "Sponsorship Visa Immigration Assessment Form",
+    fields: [
+      "Upload your completed sponsorship visa assessment form",
+      "Upload your International Passport",
+      "Upload your passport photograph",
+      "Upload birth certificate file",
+      "Upload your sponsor's Identification",
+      "Upload your financial documents",
+      "Upload your proof of sponsor's status",
+      "Upload your police clearance certificates",
+      "Upload your medical examination reports",
+    ],
+    downloadLink:
+      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.sponsorshipvisa.pdf",
+    instruction:
+      "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
   {
-    id: 6,
-    title: "Family Visa",
-    icon: "/path/to/icon6.png",
-    files: ["Marriage Certificate", "Birth Certificate"],
-  },
-  {
-    id: 7,
-    title: "Work Permit Visa",
-    icon: "/path/to/icon7.png",
-    files: ["Job Offer Letter", "Work Contract"],
+    title: "Work Permit Visa Immigration Assessment Form",
+    fields: [
+      "Upload your completed work permit visa assessment form",
+      "Upload your International Passport",
+      "Upload your passport photograph",
+      "Upload birth certificate file (If any)",
+      "Upload your Resume/CV",
+      "Upload your financial documents",
+      "Upload your educational qualifications (If any)",
+      "Upload your police clearance certificates (If any)",
+      "Upload your medical examination reports (If any)",
+    ],
+    downloadLink:
+      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.workpermitvisa.pdf",
+    instruction:
+      "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
 ];
 
 export default function Apply() {
+  const [uploadedFiles, setUploadedFiles] = useState<
+    Record<string, Record<string, File[]>>
+  >({});
+  const [additionalInfo, setAdditionalInfo] = useState<
+    Record<string, Record<string, string>>
+  >({});
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Handle multiple file selection per field
+  const handleFileChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    sectionTitle: string,
+    fieldName: string
+  ) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    setUploadedFiles((prev) => ({
+      ...prev,
+      [sectionTitle]: {
+        ...(prev[sectionTitle] || {}),
+        [fieldName]: [
+          ...(prev[sectionTitle]?.[fieldName] || []),
+          ...Array.from(files),
+        ],
+      },
+    }));
+  };
+
+  // Handle additional text input per field
+  const handleTextChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    sectionTitle: string
+  ) => {
+    setAdditionalInfo((prev) => ({
+      ...prev,
+      [sectionTitle]: {
+        ...(prev[sectionTitle] || {}),
+      },
+    }));
+  };
+
+  console.log({ uploadedFiles, additionalInfo });
+
+  // Handle file removal
+  const handleRemoveFile = (
+    sectionTitle: string,
+    fieldName: string,
+    fileIndex: number
+  ) => {
+    setUploadedFiles((prev) => {
+      if (!prev[sectionTitle] || !prev[sectionTitle][fieldName]) return prev;
+
+      const updatedFiles = { ...prev };
+
+      updatedFiles[sectionTitle] = {
+        ...updatedFiles[sectionTitle],
+        [fieldName]: updatedFiles[sectionTitle][fieldName].filter(
+          (_, index) => index !== fileIndex
+        ),
+      };
+
+      // Remove field if empty
+      if (updatedFiles[sectionTitle][fieldName].length === 0) {
+        delete updatedFiles[sectionTitle][fieldName];
+      }
+
+      // Remove section if empty
+      if (Object.keys(updatedFiles[sectionTitle]).length === 0) {
+        delete updatedFiles[sectionTitle];
+      }
+
+      return { ...updatedFiles };
+    });
+  };
+
+  // Render file previews
+  const renderFilePreviews = (
+    files: File[],
+    sec: string,
+    p: string,
+    i: number
+  ) => {
+    return files.map((file, index) => {
+      const fileUrl = URL.createObjectURL(file);
+      const isImage = file.type.startsWith("image/");
+      console.log(files, sec, p, i);
+      return (
+        <div key={index} className="flex items-center gap-2 mt-2">
+          {isImage ? (
+            <Image
+              src={fileUrl}
+              alt={`Preview ${index + 1}`}
+              className="object-cover rounded"
+              width={200}
+              height={20}
+            />
+          ) : (
+            <a
+              href={fileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600"
+            >
+              <FaDownload /> View File
+            </a>
+          )}
+          <button
+            onClick={() => handleRemoveFile(sec, p, index)}
+            className="text-red-600"
+          >
+            <FaTimes />
+          </button>
+        </div>
+      );
+    });
+  };
+
   return (
     <>
       <Head>
@@ -62,84 +268,148 @@ export default function Apply() {
       <div className="pages-banner about">
         <div className="base-container w-container">
           <div className="banner-title-wrapper">
-            <h1
-              data-w-id="fe347540-b17b-7eb6-0d52-86453fd36721"
-              style={{ opacity: 1 }}
-              className="banner-title"
-            >
-              Apply
-            </h1>
+            <h1 className="banner-title">Apply</h1>
           </div>
         </div>
       </div>
-      <section>
-        <div
-          className="max-w-5xl mx-auto p-6 bg-white text-black"
-          style={{ margin: "40px auto" }}
+      <section
+        className="p-6 max-w-3xl mx-auto"
+        style={{ margin: "40px auto" }}
+      >
+        <h1
+          className="text-xl font-bold text-gray-900 mb-4"
+          style={{ fontSize: "3rem", color: "#A5272B" }}
         >
-          <h1 className="font-bold mb-4 text-2xl">
-            Immigration Assessment Forms
-          </h1>
-          <p className="mb-4">
-            Please complete the form below to provide your details for
-            assessment.
-          </p>
-          {visas.map((visa) => (
-            <VisaForm key={visa.id} title={visa.title} files={visa.files} />
-          ))}
-        </div>
+          Immigration Assessment Forms
+        </h1>
+        <p className="mb-6 text-gray-600">
+          Please spend a few minutes completing the assessment form. Once you
+          complete the form and submitted, LEGAL PATHWAY IMMIGRATION LAWFIRM
+          assessment team will contact you to provide further assistance.
+          Explore other immigration categories for precise assessment.
+        </p>
+
+        <p
+          className=""
+          style={{ fontSize: "1.3rem", fontWeight: "bold", marginTop: "20px" }}
+        >
+          Links to other Immigration Assessment Forms Categories:
+        </p>
+        {otherImmigration.map((other) => (
+          <div key={other.text} className="flex items-center gap-2">
+            <p className="text-[#A5272B]">{other.icon}</p>
+            <p
+              className="text-blue-600 text-xs cursor-pointer"
+              onClick={() => scrollToSection(other.text)}
+            >
+              {other.text}
+            </p>
+          </div>
+        ))}
+
+        {sections.map((section, index) => (
+          <div
+            key={index}
+            id={section.title}
+            className="mb-8 p-4 border-b  bg-white"
+            style={{ marginTop: "60px" }}
+          >
+            <h2
+              className="text-xl font-semibold text-gray-900 mb-4"
+              style={{ fontSize: "1.5rem", color: "#A5272B" }}
+            >
+              {section.title}
+            </h2>
+            <p>{section.instruction}</p>
+            {section.downloadLink && (
+              <a
+                href={section.downloadLink}
+                download
+                className=""
+                style={{
+                  color: "oklch(0.546 0.245 262.881)",
+                  marginTop: "30px",
+                  marginBottom: "20px",
+                  fontSize: "0.9rem",
+                }}
+              >
+                Download {section.title}
+              </a>
+            )}
+            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+              {section.fields.map((field, i) => (
+                <div key={i} className="">
+                  <p
+                    className=""
+                    style={{
+                      marginTop: "15px",
+                      fontSize: "14px",
+                      color: "#777777",
+                    }}
+                  >
+                    {field}
+                  </p>
+                  {/* File Input */}
+                  <input
+                    type="file"
+                    multiple
+                    placeholder="Choose File"
+                    style={{
+                      padding: "8px",
+                      marginTop: "-6px",
+                      color: "#fff",
+                      marginBottom: "10px",
+                      cursor: "pointer",
+                    }}
+                    className="block w-26 border-none bg-[#828385]  border rounded"
+                    onChange={(e) => handleFileChange(e, section.title, field)}
+                  />
+                  {/* Additional Info Input */}
+                  {/* File Previews */}
+                  {uploadedFiles[section.title]?.[field] &&
+                    renderFilePreviews(
+                      uploadedFiles[section.title][field],
+                      section.title,
+                      field,
+                      i
+                    )}
+                </div>
+              ))}
+              <div>
+                <p
+                  style={{
+                    marginTop: "15px",
+                    fontSize: "14px",
+                    color: "#777777",
+                  }}
+                >
+                  Addtional Info
+                </p>
+                <input
+                  type="text"
+                  placeholder="Optional additional info"
+                  className="mt-1 w-[75%] block border focus:outline-none rounded"
+                  onChange={(e) => handleTextChange(e, section.title)}
+                  style={{ marginTop: "-6px", padding: "10px" }}
+                />
+              </div>
+              <button
+                type="submit"
+                style={{
+                  marginTop: "40px",
+                  marginBottom: "15px",
+                  backgroundColor: "#A5272B",
+                  color: "white",
+                  padding: "5px 30px",
+                  borderRadius: "5px",
+                }}
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        ))}
       </section>
     </>
-  );
-}
-
-function VisaForm({ title, files }: { title: string; files: string[] }) {
-  return (
-    <div className="mb-10 border-t border-gray-100 py-10 pt-6">
-      <h2 className="font-semibold mb-4 text-xl">{title}</h2>
-      <p className="text-gray-600 mb-4">Upload your required documents here:</p>
-      <form className="">
-        {files.map((file, index) => (
-          <FileInput key={index} label={file} />
-        ))}
-        <Input label="Additional Information" type="text" />
-        <div
-          className="bg-[#FF5400] w-50 text-center mt-10  text-white"
-          style={{ marginTop: "15px", padding: "10px", marginBottom: "40px" }}
-        >
-          Submit
-        </div>
-      </form>
-    </div>
-  );
-}
-
-function Input({ label, type }: { label: string; type: string }) {
-  return (
-    <div style={{ marginTop: "20px" }}>
-      <label className="block font-medium mb-1 text-gray-700">{label}</label>
-
-      <input
-        type={type}
-        style={{ padding: "10px" }}
-        placeholder="You may provide more infomation here."
-        className="w-full p-2 border rounded-md"
-        required
-      />
-    </div>
-  );
-}
-
-function FileInput({ label }: { label: string }) {
-  return (
-    <div style={{ marginTop: "20px" }}>
-      <label className="block text-gray-700 font-medium">{label}</label>
-      <input
-        type="file"
-        style={{ padding: "10px" }}
-        className="bg-gray-300 border-none rounded-md focus:outline-none focus:ring-2"
-        required
-      />
-    </div>
   );
 }
