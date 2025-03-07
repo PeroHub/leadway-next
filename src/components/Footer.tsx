@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import GoogleMap from "./GoogleMap";
 export default function Footer() {
   return (
     <div className="footer">
@@ -137,9 +138,10 @@ export default function Footer() {
             </div>
           </div> */}
         </div>
-        <div className="footer-bottom-wrapper">
+        <GoogleMap />
+        <div className="footer-bottom-wrapper" style={{ marginTop: "10px" }}>
           <div className="footer-copyright">
-            © Legal Pathway Immigration Firm. All Rights Reserved 2025.{" "}
+            © Legal Pathway Immigration Firm. All Rights Reserved 2020.{" "}
             <span className="footer-copyright">Licensing</span>
           </div>
         </div>
