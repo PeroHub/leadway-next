@@ -174,12 +174,15 @@ export default function Apply() {
   // Handle additional text input per field
   const handleTextChange = (
     e: React.ChangeEvent<HTMLInputElement>,
-    sectionTitle: string
+    sectionTitle: string,
+    fieldName: string
   ) => {
+    const { value } = e.target;
     setAdditionalInfo((prev) => ({
       ...prev,
       [sectionTitle]: {
         ...(prev[sectionTitle] || {}),
+        [fieldName]: value,
       },
     }));
   };
@@ -273,12 +276,12 @@ export default function Apply() {
         </div>
       </div>
       <section
-        className="p-6 max-w-3xl mx-auto"
-        style={{ margin: "40px auto" }}
+        className="p-10 max-w-3xl mx-auto"
+        style={{ margin: "40px auto", padding: "10px" }}
       >
         <h1
           className="text-xl font-bold text-gray-900 mb-4"
-          style={{ fontSize: "3rem", color: "#A5272B" }}
+          style={{ fontSize: "2.5rem", color: "#A5272B" }}
         >
           Immigration Assessment Forms
         </h1>
@@ -337,6 +340,64 @@ export default function Apply() {
               </a>
             )}
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <p
+                  style={{
+                    marginTop: "15px",
+                    fontSize: "14px",
+                    color: "#777777",
+                  }}
+                >
+                  First Name
+                </p>
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  className="mt-1 w-[75%] block border focus:outline-none rounded"
+                  onChange={(e) =>
+                    handleTextChange(e, section.title, "firstName")
+                  }
+                  style={{ marginTop: "-6px", padding: "10px" }}
+                />
+              </div>
+              <div>
+                <p
+                  style={{
+                    marginTop: "15px",
+                    fontSize: "14px",
+                    color: "#777777",
+                  }}
+                >
+                  Last Name
+                </p>
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  className="mt-1 w-[75%] block border focus:outline-none rounded"
+                  onChange={(e) =>
+                    handleTextChange(e, section.title, "lastName")
+                  }
+                  style={{ marginTop: "-6px", padding: "10px" }}
+                />
+              </div>
+              <div>
+                <p
+                  style={{
+                    marginTop: "15px",
+                    fontSize: "14px",
+                    color: "#777777",
+                  }}
+                >
+                  Email Address
+                </p>
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  className="mt-1 w-[75%] block border focus:outline-none rounded"
+                  onChange={(e) => handleTextChange(e, section.title, "email")}
+                  style={{ marginTop: "-6px", padding: "10px" }}
+                />
+              </div>
               {section.fields.map((field, i) => (
                 <div key={i} className="">
                   <p
@@ -389,7 +450,9 @@ export default function Apply() {
                   type="text"
                   placeholder="Optional additional info"
                   className="mt-1 w-[75%] block border focus:outline-none rounded"
-                  onChange={(e) => handleTextChange(e, section.title)}
+                  onChange={(e) =>
+                    handleTextChange(e, section.title, "additionalInfo")
+                  }
                   style={{ marginTop: "-6px", padding: "10px" }}
                 />
               </div>
