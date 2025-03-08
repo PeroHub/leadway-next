@@ -90,28 +90,28 @@ export default function Navbar() {
                     style={{ padding: "10px" }}
                   >
                     <Link
-                      href=""
+                      href="/visa-application/#studyvisa"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
-                      Student Visa
+                      Study Visa
                     </Link>
                     <Link
-                      href=""
+                      href="visa-application/#Workpermitvisaimmigration"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
                       Work Visa
                     </Link>
                     <Link
-                      href=""
+                      href="/visa-application/#Businessvisa"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
                       Business Visa
                     </Link>
                     <Link
-                      href=""
+                      href="/visa-application/#citizenshipvisa"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
-                      Tourist Visa
+                      Citizenship Visa
                     </Link>
                   </div>
                 )}
@@ -153,40 +153,40 @@ export default function Navbar() {
                     style={{ padding: "10px" }}
                   >
                     <Link
-                      href=""
+                      href="/crs-calculator"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
                       CRS Calculator
                     </Link>
                     <Link
-                      href=""
+                      href="/pnp-finder"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
                       PNP Finder
                     </Link>
                     <Link
-                      href=""
+                      href="/clb-languate-converter"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
                       {/* PNP Finder */}
                       CLB Language Converter
                     </Link>
                     <Link
-                      href=""
+                      href="/immigration-processing-time"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
                       {/* PNP Finder */}
                       Immigration Processing Time
                     </Link>
                     <Link
-                      href=""
+                      href="/job-finder"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
                       {/* PNP Finder */}
                       Job Finder
                     </Link>
                     <Link
-                      href=""
+                      href="/salary-calculator"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
                       {/* PNP Finder */}
@@ -367,28 +367,28 @@ export default function Navbar() {
                 style={{ padding: "10px" }}
               >
                 <Link
-                  href="/visa-application/student"
+                  href="/visa-application/#studyvisa"
                   className="block text-gray-200 hover:text-white"
                 >
-                  Student Visa
+                  Study Visa
                 </Link>
                 <Link
-                  href="/visa-application/work"
+                  href="visa-application/#Workpermitvisaimmigration"
                   className="block text-gray-200 hover:text-white"
                 >
                   Work Visa
                 </Link>
                 <Link
-                  href="/visa-application/business"
+                  href="/visa-application/#Businessvisa"
                   className="block text-gray-200 hover:text-white"
                 >
                   Business Visa
                 </Link>
                 <Link
-                  href="/visa-application/tourist"
+                  href="/visa-application/#citizenshipvisa"
                   className="block text-gray-200 hover:text-white"
                 >
-                  Tourist Visa
+                  Citizenship Visa
                 </Link>
               </div>
             )}

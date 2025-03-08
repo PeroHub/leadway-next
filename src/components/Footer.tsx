@@ -47,7 +47,10 @@ export default function Footer() {
         <div className="footer-wrapper">
           <div className="footer-links-wrapper">
             <h5 className="white-text mb-15">Visa Service</h5>
-            <Link href="/visa-application/#work" className="footer-link">
+            <Link
+              href="/visa-application/#Businessvisa"
+              className="footer-link"
+            >
               Business Visa
             </Link>
             <Link
@@ -57,16 +60,22 @@ export default function Footer() {
             >
               Family Visa
             </Link>
-            <Link href="visa-application/#work" className="footer-link">
+            <Link
+              href="visa-application/#Workpermitvisaimmigration"
+              className="footer-link"
+            >
               Work Permit Visa
             </Link>
-            <Link href="/visa-application/#study" className="footer-link">
+            <Link href="/visa-application/#studyvisa" className="footer-link">
               Study Visa
             </Link>
-            <Link href="/visa-application/#travel" className="footer-link">
+            <Link href="/visa-application/#travelvisa" className="footer-link">
               Travel Visa
             </Link>
-            <Link href="/visa-application/#citizenship" className="footer-link">
+            <Link
+              href="/visa-application/#citizenshipvisa"
+              className="footer-link"
+            >
               Citizenship Visa
             </Link>
           </div>
