@@ -11,7 +11,7 @@ export default function AdminLayout({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const pathname = usePathname(); // Get current route
+  const pathname = usePathname();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
