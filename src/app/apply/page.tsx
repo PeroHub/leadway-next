@@ -4,6 +4,10 @@ import { useState } from "react";
 import Head from "next/head";
 import { FaArrowAltCircleRight, FaDownload, FaTimes } from "react-icons/fa";
 import Image from "next/image";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const otherImmigration = [
   {
@@ -136,13 +140,38 @@ const sections = [
 ];
 
 export default function Apply() {
+  // State to track files per section and field
   const [uploadedFiles, setUploadedFiles] = useState<
     Record<string, Record<string, File[]>>
   >({});
+  // State to track text input values per section and field
   const [additionalInfo, setAdditionalInfo] = useState<
     Record<string, Record<string, string>>
   >({});
 
+  // React Query Mutation using Axios to post FormData
+  const applyMutation = useMutation({
+    mutationFn: async (formData: FormData) => {
+      const response = await axios.post("/api/apply-visa", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      return response.data;
+    },
+    onSuccess: () => {
+      toast.success(
+        "Your Application was submitted successfully. You will be contacted shortly via the email you provided."
+      );
+    },
+    onError: (error: unknown) => {
+      toast.error("Ooops! Error submitting application.");
+      // alert("Ooops! Error submitting application.");
+      console.error("Error submitting application:", error);
+    },
+  });
+
+  // Scroll to a specific section by ID
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -150,7 +179,7 @@ export default function Apply() {
     }
   };
 
-  // Handle multiple file selection per field
+  // Handle file input changes for a specific section and field
   const handleFileChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     sectionTitle: string,
@@ -171,7 +200,7 @@ export default function Apply() {
     }));
   };
 
-  // Handle additional text input per field
+  // Handle text input changes for a specific section and field
   const handleTextChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     sectionTitle: string,
@@ -187,9 +216,7 @@ export default function Apply() {
     }));
   };
 
-  console.log({ uploadedFiles, additionalInfo });
-
-  // Handle file removal
+  // Handle removal of a file from a specific section and field
   const handleRemoveFile = (
     sectionTitle: string,
     fieldName: string,
@@ -199,7 +226,6 @@ export default function Apply() {
       if (!prev[sectionTitle] || !prev[sectionTitle][fieldName]) return prev;
 
       const updatedFiles = { ...prev };
-
       updatedFiles[sectionTitle] = {
         ...updatedFiles[sectionTitle],
         [fieldName]: updatedFiles[sectionTitle][fieldName].filter(
@@ -207,31 +233,29 @@ export default function Apply() {
         ),
       };
 
-      // Remove field if empty
+      // If no files remain for the field, remove that field
       if (updatedFiles[sectionTitle][fieldName].length === 0) {
         delete updatedFiles[sectionTitle][fieldName];
       }
-
-      // Remove section if empty
+      // If no fields remain for the section, remove the section
       if (Object.keys(updatedFiles[sectionTitle]).length === 0) {
         delete updatedFiles[sectionTitle];
       }
 
-      return { ...updatedFiles };
+      return updatedFiles;
     });
   };
 
-  // Render file previews
+  // Render file previews for the provided files
   const renderFilePreviews = (
     files: File[],
     sec: string,
-    p: string,
-    i: number
+    fieldName: string
+    // i: number
   ) => {
     return files.map((file, index) => {
       const fileUrl = URL.createObjectURL(file);
       const isImage = file.type.startsWith("image/");
-      console.log(files, sec, p, i);
       return (
         <div key={index} className="flex items-center gap-2 mt-2">
           {isImage ? (
@@ -253,14 +277,40 @@ export default function Apply() {
             </a>
           )}
           <button
-            onClick={() => handleRemoveFile(sec, p, index)}
+            onClick={() => handleRemoveFile(sec, fieldName, index)}
             className="text-red-600"
+            type="button"
           >
             <FaTimes />
           </button>
         </div>
       );
     });
+  };
+
+  // Handle submission for a given section: build a FormData with text and file values then submit
+  const handleSectionSubmit = (e: React.FormEvent, sectionTitle: string) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("sectionTitle", sectionTitle);
+
+    // Append text values
+    const textData = additionalInfo[sectionTitle] || {};
+    for (const [fieldName, value] of Object.entries(textData)) {
+      formData.append(fieldName, value);
+    }
+
+    // Append files
+    const fileData = uploadedFiles[sectionTitle] || {};
+    for (const [fieldName, fileArr] of Object.entries(fileData)) {
+      fileArr.forEach((file) => {
+        formData.append(fieldName, file);
+      });
+    }
+
+    // Submit the form data using our React Query mutation
+    applyMutation.mutate(formData);
   };
 
   return (
@@ -287,13 +337,11 @@ export default function Apply() {
         </h1>
         <p className="mb-6 text-gray-600">
           Please spend a few minutes completing the assessment form. Once you
-          complete the form and submitted, LEGAL PATHWAY IMMIGRATION LAWFIRM
-          assessment team will contact you to provide further assistance.
-          Explore other immigration categories for precise assessment.
+          complete the form and submit, our assessment team will contact you to
+          provide further assistance. Explore other immigration categories for
+          precise assessment.
         </p>
-
         <p
-          className=""
           style={{ fontSize: "1.3rem", fontWeight: "bold", marginTop: "20px" }}
         >
           Links to other Immigration Assessment Forms Categories:
@@ -309,12 +357,11 @@ export default function Apply() {
             </p>
           </div>
         ))}
-
         {sections.map((section, index) => (
           <div
             key={index}
             id={section.title}
-            className="mb-8 p-4 border-b  bg-white"
+            className="mb-8 p-4 border-b bg-white"
             style={{ marginTop: "60px" }}
           >
             <h2
@@ -328,18 +375,21 @@ export default function Apply() {
               <a
                 href={section.downloadLink}
                 download
-                className=""
                 style={{
                   color: "oklch(0.546 0.245 262.881)",
                   marginTop: "30px",
                   marginBottom: "20px",
                   fontSize: "0.9rem",
+                  display: "block",
                 }}
               >
                 Download {section.title}
               </a>
             )}
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+            <form
+              className="space-y-8"
+              onSubmit={(e) => handleSectionSubmit(e, section.title)}
+            >
               <div>
                 <p
                   style={{
@@ -399,9 +449,8 @@ export default function Apply() {
                 />
               </div>
               {section.fields.map((field, i) => (
-                <div key={i} className="">
+                <div key={i}>
                   <p
-                    className=""
                     style={{
                       marginTop: "15px",
                       fontSize: "14px",
@@ -410,7 +459,6 @@ export default function Apply() {
                   >
                     {field}
                   </p>
-                  {/* File Input */}
                   <input
                     type="file"
                     multiple
@@ -422,17 +470,15 @@ export default function Apply() {
                       marginBottom: "10px",
                       cursor: "pointer",
                     }}
-                    className="block w-26 border-none bg-[#828385]  border rounded"
+                    className="block w-26 border-none bg-[#828385] border rounded"
                     onChange={(e) => handleFileChange(e, section.title, field)}
                   />
-                  {/* Additional Info Input */}
-                  {/* File Previews */}
                   {uploadedFiles[section.title]?.[field] &&
                     renderFilePreviews(
                       uploadedFiles[section.title][field],
                       section.title,
-                      field,
-                      i
+                      field
+                      // i
                     )}
                 </div>
               ))}
@@ -444,7 +490,7 @@ export default function Apply() {
                     color: "#777777",
                   }}
                 >
-                  Addtional Info
+                  Additional Info
                 </p>
                 <input
                   type="text"
@@ -466,8 +512,11 @@ export default function Apply() {
                   padding: "5px 30px",
                   borderRadius: "5px",
                 }}
+                disabled={applyMutation.status === "pending"}
               >
-                Submit
+                {applyMutation.status === "pending"
+                  ? "Submitting..."
+                  : "Submit"}
               </button>
             </form>
           </div>
