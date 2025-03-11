@@ -105,7 +105,10 @@ export default function AdminDashboard() {
           </table>
 
           {/* Mobile Card View */}
-          <div className="md:hidden space-y-4 mt-10">
+          <div
+            className="md:hidden space-y-4 mt-10"
+            style={{ overflowX: "hidden" }}
+          >
             {data.map(
               (app: {
                 _id: string;
