@@ -43,35 +43,35 @@ export default function VisaApprovalEmail({
           }}
         >
           {/* Header with Logo and Address */}
-          <Section style={{ width: "100%" }}>
-            <Row>
-              <Column style={{ width: "50%", verticalAlign: "top" }}>
-                <Link href="https://www.legalpathwayimmigrationlawfirm.org">
-                  <Img
-                    src="https://res.cloudinary.com/dywd8r6rd/image/upload/v1741782026/logo3_ewikx4.png"
-                    alt="Legal Pathway Immigration"
-                    width="150"
-                    style={{ display: "block" }}
-                  />
-                </Link>
-              </Column>
-              <Column
+          {/* Header with Logo and Address */}
+          <Section
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column", // Stack items vertically
+              alignItems: "center", // Center horizontally
+              textAlign: "center", // Ensure text is centered
+              gap: "10px", // Add spacing between elements
+            }}
+          >
+            <Link href="https://www.legalpathwayimmigrationlawfirm.org">
+              <Img
+                src="https://res.cloudinary.com/dywd8r6rd/image/upload/v1741782026/logo3_ewikx4.png"
+                alt="Legal Pathway Immigration"
+                width="150"
+                style={{ display: "block", margin: "0 auto" }}
+              />
+            </Link>
+            <Text style={{ margin: "0 auto", textAlign: "center" }}>
+              <Link
+                href="https://www.google.com/maps/search/?api=1&query=3250+Bloor+St+W+Suite+600,+Toronto,+ON+M8X+2X9,+Canada"
                 style={{
-                  width: "50%",
-                  textAlign: "right",
-                  verticalAlign: "top",
+                  fontWeight: "bold",
                 }}
               >
-                <Text style={{ margin: 0 }}>
-                  <Link
-                    href="https://www.google.com/maps/search/?api=1&query=3250+Bloor+St+W+Suite+600,+Toronto,+ON+M8X+2X9,+Canada"
-                    style={{ textDecoration: "none" }}
-                  >
-                    3250 Bloor St W Suite 600, Etobicoke, ON M9X 2Y4, Canada
-                  </Link>
-                </Text>
-              </Column>
-            </Row>
+                3250 Bloor St W Suite 600, Etobicoke, ON M9X 2Y4, Canada
+              </Link>
+            </Text>
           </Section>
 
           {/* Eligibility Check Title */}
@@ -79,7 +79,7 @@ export default function VisaApprovalEmail({
             style={{
               fontSize: "24px",
               fontWeight: "bold",
-              // textAlign: "center",
+              textAlign: "center",
               margin: "20px 0",
             }}
           >
@@ -88,19 +88,19 @@ export default function VisaApprovalEmail({
 
           {/* Visa Approval Details */}
           <Section>
-            <Text style={{ margin: "10px 0" }}>
+            <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
               <strong>NAME:</strong> {name}
             </Text>
-            <Text style={{ margin: "10px 0" }}>
+            <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
               <strong>PASSPORT NUMBER:</strong> {passportNumber}
             </Text>
-            <Text style={{ margin: "10px 0" }}>
+            <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
               <strong>VISA APPLICATION:</strong> {visaType}
             </Text>
-            <Text style={{ margin: "10px 0" }}>
+            <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
               <strong>COUNTRY:</strong> {country}
             </Text>
-            <Text style={{ margin: "10px 0" }}>
+            <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
               <strong>DATE:</strong> {date}
             </Text>
           </Section>
@@ -109,6 +109,8 @@ export default function VisaApprovalEmail({
           <Text
             style={{
               fontSize: "18px",
+              textAlign: "center",
+
               fontWeight: "bold",
               margin: "20px 0 10px 0",
             }}
@@ -116,27 +118,34 @@ export default function VisaApprovalEmail({
             VERIFICATION SUCCESSFUL
           </Text>
 
-          <Text style={{ margin: "10px 0" }}>Dear {name},</Text>
-          <Text style={{ margin: "10px 0" }}>
+          <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
+            Dear {name},
+          </Text>
+          <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
             We are pleased to inform you that subject to the fulfillment of all
             Immigration procedures under relevant laws in Canada and the Labour
             Act of 1986, your documents have been completely verified.
           </Text>
-          <Text style={{ margin: "10px 0" }}>
+          <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
             Your submitted documents have been thoroughly checked. You meet
             requirements for {visaType} Application.
           </Text>
-          <Text style={{ margin: "10px 0" }}>
-            You have been found eligible to apply for your {visaType}{" "}
-            APPLICATION PROCESS.
+          <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
+            You have been found eligible to apply for your{" "}
+            <span style={{ color: "red" }}>
+              {visaType} APPLICATION PROCESS.
+            </span>
           </Text>
-          <Text style={{ margin: "10px 0" }}>
-            This is to certify that these documents with the above name are
-            APPROVED, AUTHORIZED and required to make a payment for {visaType}.
+          <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
+            This is to certify that these documents with the above name are{" "}
+            <span style={{ color: "red" }}>APPROVED, AUTHORIZED </span> and
+            required to make a payment for{" "}
+            <span style={{ color: "red" }}>{visaType}</span>.
           </Text>
-          <Text style={{ margin: "10px 0" }}>
-            However, applicant(s) are required to make a deposit payment of a
-            REFUNDABLE REGISTRATION FEE through your consultant.
+          <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
+            However, applicant(s) are required to make a deposit payment of a{" "}
+            <span style={{ color: "red" }}>REFUNDABLE REGISTRATION FEE</span>{" "}
+            through your consultant.
           </Text>
 
           {/* Next Steps */}
@@ -149,7 +158,13 @@ export default function VisaApprovalEmail({
           >
             Here&apos;s the next stage to get started:
           </Text>
-          <ul style={{ margin: "10px 0", paddingLeft: "20px" }}>
+          <ul
+            style={{
+              margin: "10px 0",
+              paddingLeft: "20px",
+              fontWeight: "bold",
+            }}
+          >
             <li>Registration Fees Payment*</li>
             <li>
               Payment of required fees to initiate the registration process.
@@ -165,7 +180,14 @@ export default function VisaApprovalEmail({
           </ul>
 
           {/* Note */}
-          <Text style={{ fontSize: "14px", color: "gray", margin: "20px 0" }}>
+          <Text
+            style={{
+              fontSize: "14px",
+              // color: "gray",
+              margin: "20px 0",
+              fontWeight: "bold",
+            }}
+          >
             NOTE: Applicant(s) are expected to effect a response of their
             ELIGIBILITY RESULTS within 72 working hours, else eligibility will
             be expired. Once your application process is initiated at the
@@ -173,12 +195,26 @@ export default function VisaApprovalEmail({
             correspondence directly from the agency, your designated consultant,
             and the embassy itself.
           </Text>
-          <Text style={{ fontSize: "14px", color: "gray", margin: "20px 0" }}>
+          <Text
+            style={{
+              fontSize: "14px",
+              // color: "gray",
+              margin: "20px 0",
+              fontWeight: "bold",
+            }}
+          >
             If you have any questions or concerns, please do not hesitate to
             consult your consultant or customer service through the official
             mail address.
           </Text>
-          <Text style={{ fontSize: "14px", color: "gray", margin: "20px 0" }}>
+          <Text
+            style={{
+              fontSize: "14px",
+              // color: "gray",
+              margin: "20px 0",
+              fontWeight: "bold",
+            }}
+          >
             We appreciate your trust in LEGAL PATHWAY IMMIGRATION LAW FIRM and
             look forward to supporting your Canadian journey!
           </Text>
