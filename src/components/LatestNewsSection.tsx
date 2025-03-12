@@ -9,7 +9,7 @@ export default function LatestNewsSection() {
       image:
         "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/65285cd1be5ecd0018f1f401_pexels-ketut-subiyanto-4245905.jpg",
       category: "Immigration",
-      link: "/blog-posts/understanding-immigration-policies",
+      link: "",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ export default function LatestNewsSection() {
       image:
         "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/65285c8e35e6881190af2574_pexels-dominika-roseclay-1252500.jpg",
       category: "Visa",
-      link: "/blog-posts/smooth-visa-application-process",
+      link: "",
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ export default function LatestNewsSection() {
       image:
         "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/65285c7458160bda3b078c91_pexels-kampus-production-6181092.jpg",
       category: "News",
-      link: "/blog-posts/choose-right-visa-for-your-journey",
+      link: "",
     },
   ];
 
@@ -86,7 +86,8 @@ export default function LatestNewsSection() {
                     </div>
                   </div>
                   <a
-                    href={`/posts-categories/${post.category.toLowerCase()}`}
+                    // href={`/posts-categories/${post.category.toLowerCase()}`}
+                    href={``}
                     className="home-blog-category"
                   >
                     {post.category}

@@ -28,7 +28,7 @@ export default function VisaSolutions() {
               economic development, and enhance international relations.
             </p>
             <div className="button-wrapper">
-              <a href="/investment" className="primary-button dark w-button">
+              <a href="" className="primary-button dark w-button">
                 Explore more
               </a>
               <div className="clients-pics-wrapp">
