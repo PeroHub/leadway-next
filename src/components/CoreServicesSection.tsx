@@ -9,7 +9,7 @@ export default function CoreServicesSection() {
       image:
         "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/652ea6d6583f67a8de3fa46e_pexels-keira-burton-6146978.jpg",
       icon: "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/652db2fc45a71830e136ff99_fi_3022243.svg",
-      link: "/visa/temporary-visa",
+      link: "/our-services",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ export default function CoreServicesSection() {
       image:
         "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/65286fb263f107046ea7900e_nicole-geri-gMJ3tFOLvnA-unsplash.jpg",
       icon: "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/6528915357f15ad2b94de740_visa.svg",
-      link: "/visa/study-visa",
+      link: "/our-services",
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ export default function CoreServicesSection() {
       image:
         "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/652891bd3236320ae1f0b84c_pexels-oleksandr-p-1008155.jpg",
       icon: "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/6528916057f15ad2b94df35b_relocation.svg",
-      link: "/visa/investment-visa",
+      link: "/our-services",
     },
     {
       id: 4,
@@ -39,7 +39,7 @@ export default function CoreServicesSection() {
       image:
         "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/652891e0a6170d2717dd7e55_pexels-vlada-karpovich-7368310.jpg",
       icon: "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/652891689ec9911fdd305464_immigration.svg",
-      link: "/visa/work-visa",
+      link: "/our-services",
     },
     {
       id: 5,
@@ -49,7 +49,7 @@ export default function CoreServicesSection() {
       image:
         "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/652d84ffc6c49e94d80bf51b_pexels-anaid-alca%CC%81ntara-mora%CC%81n-12334457.jpg",
       icon: "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/652891689ec9911fdd305464_immigration.svg",
-      link: "/visa/family-visa",
+      link: "/our-services",
     },
     {
       id: 6,
@@ -59,7 +59,7 @@ export default function CoreServicesSection() {
       image:
         "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/652892299ec9911fdd311500_pexels-cytonn-photography-955389.jpg",
       icon: "https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/65289172057200ddd4f42749_documents.svg",
-      link: "/visa/family-visa",
+      link: "/our-services",
     },
   ];
 
@@ -92,7 +92,7 @@ export default function CoreServicesSection() {
               style={{ opacity: 1 }}
               className="button-wrapper"
             >
-              <a href="/services" className="primary-button dark">
+              <a href="/our-services" className="primary-button dark">
                 Explore all
               </a>
             </div>

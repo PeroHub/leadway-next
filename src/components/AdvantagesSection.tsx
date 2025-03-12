@@ -95,7 +95,7 @@ export default function AdvantagesSection() {
               style={{ opacity: 1 }}
               className="button-wrapper"
             >
-              <a href="/contact-us-1" className="primary-button dark">
+              <a href="" className="primary-button dark">
                 Get a Free Consultation
               </a>
             </div>
