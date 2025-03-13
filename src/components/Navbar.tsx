@@ -1,12 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisaDropdownOpen, setIsVisaDropdownOpen] = useState(false);
-  const [isAboutusDropdownOpen, setIsAboutusDropdownOpen] = useState(false);
+  // const [isAboutusDropdownOpen, setIsAboutusDropdownOpen] = useState(false);
   const [isFreetoolsDropdownOpen, setIsFreetoolsDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -17,13 +19,19 @@ export default function Navbar() {
     setIsVisaDropdownOpen(!isVisaDropdownOpen);
   };
 
-  const toggleAboutusDropdown = () => {
-    setIsAboutusDropdownOpen(!isAboutusDropdownOpen);
-  };
+  // const toggleAboutusDropdown = () => {
+  //   setIsAboutusDropdownOpen(!isAboutusDropdownOpen);
+  // };
 
   const toggleFreetoolsDropdown = () => {
     setIsFreetoolsDropdownOpen(!isFreetoolsDropdownOpen);
   };
+
+  useEffect(() => {
+    if (pathname) {
+      setIsMenuOpen(false);
+    }
+  }, [pathname]);
   return (
     <div
       data-animation="over-left"
@@ -198,42 +206,9 @@ export default function Navbar() {
               <Link href="/privacy" className="nav-link white-style w-nav-link">
                 Privacy Policy
               </Link>
-              {/* <Link href="" className="nav-link white-style w-nav-link">
+              <Link href="/about" className="nav-link white-style w-nav-link">
                 About Us
-              </Link> */}
-
-              <div
-                className="nav-dropdown w-dropdown relative"
-                onMouseEnter={() => setIsAboutusDropdownOpen(true)}
-                onMouseLeave={() => setIsAboutusDropdownOpen(false)}
-              >
-                <div
-                  className="nav-dropdown-toggle w-dropdown-toggle flex items-center cursor-pointer"
-                  // onClick={toggleVisaDropdown}
-                >
-                  <p className="nav-item-title white-style">About Us</p>
-                  <span className="ml-2">&#9662;</span> {/* Dropdown arrow */}
-                </div>
-                {isAboutusDropdownOpen && (
-                  <div
-                    className="absolute top-12 flex flex-col gap-4 transition-all left-0 bg-white shadow-md rounded-md mt-2 w-48 z-50"
-                    style={{ padding: "10px" }}
-                  >
-                    <Link
-                      href=""
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-                    >
-                      Our Team
-                    </Link>
-                    <Link
-                      href=""
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-                    >
-                      Client&apos;s Review
-                    </Link>
-                  </div>
-                )}
-              </div>
+              </Link>
 
               <div className="button-wrapper">
                 <Link
@@ -273,7 +248,7 @@ export default function Navbar() {
             Home
           </Link>
 
-          <div className="relative">
+          {/* <div className="relative">
             <div
               className="nav-link white-style w-nav-link cursor-pointer flex justify-between items-center"
               onClick={toggleAboutusDropdown}
@@ -293,7 +268,7 @@ export default function Navbar() {
                 </Link>
               </div>
             )}
-          </div>
+          </div> */}
           <div className="relative">
             <div
               className="nav-link white-style w-nav-link cursor-pointer flex justify-between items-center"
@@ -307,40 +282,40 @@ export default function Navbar() {
                 style={{ padding: "10px" }}
               >
                 <Link
-                  href=""
+                  href="/crs-calculator"
                   className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                 >
                   CRS Calculator
                 </Link>
                 <Link
-                  href=""
+                  href="/pnp-finder"
                   className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                 >
                   PNP Finder
                 </Link>
                 <Link
-                  href=""
+                  href="/clb-languate-converter"
                   className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                 >
                   {/* PNP Finder */}
                   CLB Language Converter
                 </Link>
                 <Link
-                  href=""
+                  href="/immigration-processing-time"
                   className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                 >
                   {/* PNP Finder */}
                   Immigration Processing Time
                 </Link>
                 <Link
-                  href=""
+                  href="/job-finder"
                   className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                 >
                   {/* PNP Finder */}
                   Job Finder
                 </Link>
                 <Link
-                  href=""
+                  href="/salary-calculator"
                   className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                 >
                   {/* PNP Finder */}
@@ -351,6 +326,9 @@ export default function Navbar() {
           </div>
           <Link href="/contact-us" className="nav-link white-style w-nav-link">
             Contact Us
+          </Link>
+          <Link href="/about" className="nav-link white-style w-nav-link">
+            About Us
           </Link>
 
           {/* Sidebar Visa Application Dropdown */}

@@ -33,7 +33,7 @@ export default function About() {
               style={{ opacity: 1 }}
               className="banner-title"
             >
-              About
+              About Us
             </h1>
           </div>
         </div>
@@ -142,9 +142,9 @@ export default function About() {
                 expertise and care.
               </p>
               <div className="button-wrapper">
-                <Link href="/contact-us-1" className="primary-button dark">
+                {/* <Link href="/contact-us-1" className="primary-button dark">
                   Get a Free Consultation
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function About() {
                 regulations, and processes of various countries.
               </p>
               <div className="button-wrapper">
-                <Link href="/services" className="primary-button w-button">
+                <Link href="/apply" className="primary-button w-button">
                   Explore more
                 </Link>
                 <div className="clients-pics-wrapp">
@@ -224,7 +224,10 @@ export default function About() {
                 most suitable visa option based on your needs.
               </p>
               <div className="button-wrapper">
-                <Link href="/visa" className="primary-button w-button">
+                <Link
+                  href="/visa-application"
+                  className="primary-button w-button"
+                >
                   View all
                 </Link>
               </div>
@@ -233,10 +236,7 @@ export default function About() {
               <div className="about-6-projects-wrapper w-dyn-items">
                 {/* Repeat for each visa item */}
                 <div className="visa-item w-dyn-item">
-                  <Link
-                    href="/visa/student-visa"
-                    className="visa-item-overlay w-inline-block"
-                  >
+                  <Link href="" className="visa-item-overlay w-inline-block">
                     <Image
                       src="https://cdn.prod.website-files.com/651f2c08c5bd81eb296c1823/652917cce01c23b4bb9f6add_fi_3487093.svg"
                       alt=""
