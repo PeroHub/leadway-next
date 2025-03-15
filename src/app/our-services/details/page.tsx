@@ -133,26 +133,31 @@ export default function ImmigrationPage() {
                 type="text"
                 placeholder="Name"
                 className="w-full p-4 border rounded-md"
+                style={{padding: "10px"}}
                 required
               />
               <input
                 type="email"
                 placeholder="Email"
                 className="w-full p-2 border rounded-md"
+                style={{padding: "10px"}}
                 required
               />
               <input
                 type="tel"
                 placeholder="Phone"
                 className="w-full p-2 border rounded-md"
+                style={{padding: "10px"}}
                 required
               />
-              <select className="w-full p-2 border rounded-md">
+              <select className="w-full p-2 border rounded-md"
+              style={{padding: "10px"}}
+              >
                 <option>Select Service</option>
                 <option>Work Permit</option>
                 <option>Study Permit</option>
               </select>
-              <p className="w-full bg-red-600 text-center text-white py-2 rounded-md hover:bg-red-700">
+              <p style={{padding: "10px"}} className="w-full bg-red-600 text-center text-white py-2 rounded-md hover:bg-red-700">
                 Send
               </p>
             </form>
