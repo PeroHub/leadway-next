@@ -47,37 +47,76 @@ export default function VisaApprovalEmail({
           <Section
             style={{
               width: "100%",
-              display: "flex",
-              flexDirection: "column", // Stack items vertically
-              alignItems: "center", // Center horizontally
-              textAlign: "center", // Ensure text is centered
-              gap: "10px", // Add spacing between elements
+              textAlign: "center", // Center text horizontally
+              // border: "1px solid red", // For debugging
             }}
           >
-            <Link href="https://www.legalpathwayimmigrationlawfirm.org">
+            <table
+              align="center"
+              role="presentation"
+              cellSpacing="0"
+              cellPadding="0"
+              border={0}
+              width="100%"
+              style={{
+                maxWidth: "600px", // Set a max-width for better responsiveness
+                margin: "0 auto", // Center the table horizontally
+              }}
+            >
+              <tr>
+                <td
+                  style={{
+                    textAlign: "center", // Center content inside the table cell
+                    padding: "10px 0", // Add vertical padding
+                  }}
+                >
+                  <Link href="https://www.legalpathwayimmigrationlawfirm.org">
+                    <Img
+                      src="https://res.cloudinary.com/dywd8r6rd/image/upload/v1741782026/logo3_ewikx4.png"
+                      alt="Legal Pathway Immigration"
+                      width="200"
+                      style={{ display: "block", margin: "0 auto" }}
+                    />
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: "center", // Center text horizontally
+                    padding: "10px 0", // Add vertical padding
+                  }}
+                >
+                  <Text style={{ margin: 0, textAlign: "center" }}>
+                    <Link
+                      href="https://www.google.com/maps/search/?api=1&query=3250+Bloor+St+W+Suite+600,+Toronto,+ON+M8X+2X9,+Canada"
+                      style={{
+                        fontWeight: "bold",
+                        // color: "#000", // Ensure link color is visible
+                        // textDecoration: "none", // Remove underline if needed
+                      }}
+                    >
+                      3250 Bloor St W Suite 600, Etobicoke, ON M9X 2Y4, Canada
+                    </Link>
+                  </Text>
+                </td>
+              </tr>
+            </table>
+            <hr />
+            <Link href="https://www.legalpathwayimmigrationlawfirm.org/eligible">
               <Img
-                src="https://res.cloudinary.com/dywd8r6rd/image/upload/v1741782026/logo3_ewikx4.png"
-                alt="Legal Pathway Immigration"
-                width="150"
+                src="https://res.cloudinary.com/dywd8r6rd/image/upload/v1742305729/barcode_eb4zjo.png"
+                alt="Barcode"
+                width="100" // Adjust the width as needed
                 style={{ display: "block", margin: "0 auto" }}
               />
             </Link>
-            <Text style={{ margin: "0 auto", textAlign: "center" }}>
-              <Link
-                href="https://www.google.com/maps/search/?api=1&query=3250+Bloor+St+W+Suite+600,+Toronto,+ON+M8X+2X9,+Canada"
-                style={{
-                  fontWeight: "bold",
-                }}
-              >
-                3250 Bloor St W Suite 600, Etobicoke, ON M9X 2Y4, Canada
-              </Link>
-            </Text>
           </Section>
 
           {/* Eligibility Check Title */}
           <Text
             style={{
-              fontSize: "24px",
+              fontSize: "18px",
               fontWeight: "bold",
               textAlign: "center",
               margin: "20px 0",
@@ -104,6 +143,7 @@ export default function VisaApprovalEmail({
               <strong>DATE:</strong> {date}
             </Text>
           </Section>
+          <hr />
 
           {/* Verification Successful */}
           <Text
