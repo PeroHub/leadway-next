@@ -17,6 +17,7 @@ interface VisaApprovalEmailProps {
   visaType: string;
   country: string;
   date: string;
+  dear: string;
 }
 
 export default function VisaApprovalEmail({
@@ -25,6 +26,7 @@ export default function VisaApprovalEmail({
   visaType,
   country,
   date,
+  dear,
 }: VisaApprovalEmailProps) {
   return (
     <Html>
@@ -159,7 +161,7 @@ export default function VisaApprovalEmail({
           </Text>
 
           <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
-            Dear {name},
+            Dear {dear},
           </Text>
           <Text style={{ margin: "10px 0", fontWeight: "bold" }}>
             We are pleased to inform you that subject to the fulfillment of all

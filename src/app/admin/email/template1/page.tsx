@@ -13,6 +13,7 @@ export default function SendEmailForm() {
     visaType: "",
     country: "",
     date: "",
+    dear: "",
   });
   const [showMessage, setShowMessage] = useState(false);
 
@@ -87,6 +88,7 @@ export default function SendEmailForm() {
               type: "text",
               placeholder: "Passport Number",
             },
+            { name: "dear", type: "text", placeholder: "John" },
             { name: "email", type: "email", placeholder: "Email Address" },
             { name: "visaType", type: "text", placeholder: "Visa Type" },
             { name: "country", type: "text", placeholder: "Country" },

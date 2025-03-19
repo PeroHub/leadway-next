@@ -5,7 +5,7 @@ import VisaApprovalEmail from "@/components/emails/VisaApprovalEmail";
 
 export async function POST(req: Request) {
   try {
-    const { name, passportNumber, email, visaType, country, date } =
+    const { name, passportNumber, email, visaType, country, date, dear } =
       await req.json();
 
     // Nodemailer Transporter
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
 
     // Generate Email HTML
     const emailHtml = await render(
-      VisaApprovalEmail({ name, passportNumber, visaType, country, date })
+      VisaApprovalEmail({ name, passportNumber, visaType, country, date, dear })
     );
 
     // Email Content
