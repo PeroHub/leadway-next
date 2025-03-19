@@ -51,7 +51,7 @@ const immigrationPrograms = [
     title: "Study Permit for Canada",
     description:
       "Annually, more than 135,000 students choose Canada for their education. To study in Canada, a study permit issued by the government is required.",
-    image: "/images/david.jpg",
+    image: "/images/visa-ambassador.jpg",
     eligibility: [
       "Obtain a letter of acceptance from a Designated Learning Institution (DLI).",
       "Demonstrate intent to leave Canada upon permit expiry.",
@@ -76,7 +76,7 @@ const immigrationPrograms = [
     title: "Parents & Grandparents Sponsorship Program",
     description:
       "A pathway for Canadian citizens and permanent residents to reunite with their parents and grandparents in Canada.",
-    image: "/images/david.jpg",
+    image: "/images/visa-ambassador.jpg",
     eligibility: [
       "Be a Canadian Citizen or Permanent Resident.",
       "Meet minimum income requirements (typically LICO+30%).",
