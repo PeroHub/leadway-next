@@ -47,7 +47,7 @@ const sections = [
       "Upload your marriage certificate",
     ],
     downloadLink:
-      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.generalvisa.pdf",
+      "/pdf/imm.legalpathwayimmigrationlawfirmassessmentform.generalvisa.pdf",
     instruction:
       "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
@@ -63,7 +63,7 @@ const sections = [
       "Upload your medical examination reports",
     ],
     downloadLink:
-      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.familyvisa.pdf",
+      "/pdf/imm.legalpathwayimmigrationlawfirmassessmentform.familyvisa.pdf",
     instruction:
       "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
@@ -80,7 +80,7 @@ const sections = [
       "Upload your business plan",
     ],
     downloadLink:
-      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.businessvisa.pdf",
+      "/pdf/imm.legalpathwayimmigrationlawfirmassessmentform.businessvisa.pdf",
     instruction:
       "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
@@ -97,7 +97,7 @@ const sections = [
       "Upload your medical examination reports",
     ],
     downloadLink:
-      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.businessvisa.pdf",
+      "/pdf/imm.legalpathwayimmigrationlawfirmassessmentform.businessvisa.pdf",
     instruction:
       "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
@@ -115,7 +115,7 @@ const sections = [
       "Upload your medical examination reports",
     ],
     downloadLink:
-      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.sponsorshipvisa.pdf",
+      "/pdf/imm.legalpathwayimmigrationlawfirmassessmentform.sponsorshipvisa.pdf",
     instruction:
       "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
@@ -133,7 +133,7 @@ const sections = [
       "Upload your medical examination reports (If any)",
     ],
     downloadLink:
-      "/pdf/imm.gatewayimmigrationlawfirmassessmentform.workpermitvisa.pdf",
+      "/pdf/imm.legalpathwayimmigrationlawfirmassessmentform.workpermitvisa.pdf",
     instruction:
       "Instructions: Download and complete the assessment form. Once filled out, return to this page and upload the completed form along with the required supporting documents in their respective fields for review and assessment by our attorneys. You will receive an email confirming that your documents have been received, verified, and whether you are eligible to proceed with the visa application process.",
   },
