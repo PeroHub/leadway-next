@@ -11,10 +11,18 @@ export async function POST(req: Request) {
     // Nodemailer Transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
+      secure: true,
       auth: {
         user: process.env.SMTP_EMAIL, // Your email
         pass: process.env.SMTP_PASSWORD, // Your email password or app password
       },
+      // host: "mail.legalpathwayimmigrationlawfirm.org",
+      // port: 465,
+      // secure: true, // true for port 465, false for other ports
+      // auth: {
+      //   user: "test@legalpathwayimmigrationlawfirm.org",
+      //   pass: "WKhkz5T.J:hCXu4",
+      // },
     });
 
     // Generate Email HTML

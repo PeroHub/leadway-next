@@ -127,11 +127,11 @@ export default function Privacy() {
                   </p>
                   <p>
                     Email:{" "}
-                    <a href="mailto:support@kelenserceca.com">
-                      support@kelenserceca.com
+                    <a href="mailto:legalpathwayimmigrationlawfirm@gmail.com">
+                      legalpathwayimmigrationlawfirm@gmail.com
                     </a>
                   </p>
-                  <p>Phone: +1 4753411577</p>
+                  <p>Phone: +1 (430) 248-5763</p>
                   <p>
                     Address: 3250 Bloor St W Suite 600, Toronto, ON M8X 2X9,
                     Canada
