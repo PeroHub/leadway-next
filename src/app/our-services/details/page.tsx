@@ -164,7 +164,7 @@ export default function ImmigrationPage() {
             <div className="text-center border-t pt-4">
               <p className="text-gray-700 font-medium">Call for Information</p>
               <p className="text-lg font-bold text-gray-900">
-                +1 (236) 818 5558
+              +1 (430) 248-5763
               </p>
             </div>
           </div>

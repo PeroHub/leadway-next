@@ -10,7 +10,7 @@ const immigrationPrograms = [
     title: "Federal Skilled Worker Program",
     description:
       "A program for skilled professionals looking to move to Canada...",
-    image: "/images/larry.jpg",
+    image: "/images/visa-ambassador.jpg",
     eligibility: [
       "At least one year (1,650 hours) of work experience.",
       "English or French proficiency required.",
@@ -31,7 +31,7 @@ const immigrationPrograms = [
     id: 2,
     title: "Canadian Experience Class",
     description: "For individuals with skilled work experience in Canada...",
-    image: "/images/kerry.jpg",
+    image: "/images/visa-ambassador.jpg",
     eligibility: [
       "Minimum 1 year of skilled work experience in Canada.",
       "CLB 7 for TEER 0 or 1 jobs, CLB 5 for TEER 2 or 3.",
