@@ -5,7 +5,7 @@ export async function GET() {
   return NextResponse.json({ messsage: "all working" }, { status: 200 });
 }
 
-const resend = new Resend("re_62pNEmv9_5qPEQi518LKwoKZWNJfg5Mk8");
+const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: Request) {
   try {
     const { name, passportNumber, email, visaType, country, date, dear } =
