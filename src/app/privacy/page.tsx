@@ -127,8 +127,8 @@ export default function Privacy() {
                   </p>
                   <p>
                     Email:{" "}
-                    <a href="mailto:legalpathwayimmigrationlawfirm@gmail.com">
-                      legalpathwayimmigrationlawfirm@gmail.com
+                    <a href="mailto:attorney@legalpathwayimmigrationlawfirm.org">
+                      attorney@legalpathwayimmigrationlawfirm.org
                     </a>
                   </p>
                   <p>Phone: +1 (430) 248-5763</p>
