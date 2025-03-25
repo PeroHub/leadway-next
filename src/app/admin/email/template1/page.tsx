@@ -19,7 +19,7 @@ export default function SendEmailForm() {
 
   const sendEmailMutation = useMutation<void, unknown, typeof formData>({
     mutationFn: async (data: typeof formData) => {
-      const response = await axios.post("/api/send-email", data, {
+      const response = await axios.post("/api/email", data, {
         headers: { "Content-Type": "application/json" },
       });
       return response.data;

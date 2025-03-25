@@ -12,7 +12,7 @@ export async function POST(req: Request) {
       await req.json();
 
     await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from: "Legal Path Way <noreply@legalpathwayimmigrationlawfirm.org>",
       to: email,
       subject: "Visa Application Update",
       react: VisaApprovalEmail({

@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function ContactCard() {
   return (
     <div
-      className="max-w-sm p-6 bg-white rounded-2xl shadow-md"
-      style={{ margin: "60px auto", padding: "20px" }}
+      className="max-w-sm p-2 bg-white rounded-2xl shadow-md"
+      style={{ margin: "60px auto", padding: "10px" }}
     >
       <h2 className="text-xl font-semibold mb-4" style={{ fontSize: "1.5rem" }}>
         Ask Us Anything
@@ -22,14 +22,24 @@ export default function ContactCard() {
           <p className="text-gray-700">+1 (430) 248-5763</p>
         </div>
         <div className="flex items-center gap-2">
-          <Mail className="text-red-500 w-5 h-5" />
+          <Mail
+            className="text-red-500 w-5 h-5"
+            // style={{ width: "20px", height: "20px" }}
+          />
           {/* <p className="text-gray-700">support@kelenserviceca.com</p> */}
           <p className="text-gray-700">
-            legalpathwayimmigrationlawfirm@gmail.com
+            <Link
+              className="text-gray-700"
+              style={{ color: "black" }}
+              href={"mailto:attorney@legalpathwayimmigrationlawfirm.org"}
+            >
+              attorney@legalpathwayimmigrationlawfirm.org
+            </Link>
           </p>
         </div>
       </div>
       <Link
+        style={{ marginTop: "10px", marginBottom: "10px" }}
         href="/contact-us"
         className="mt-4 inline-block text-red-500 font-medium hover:underline"
       >

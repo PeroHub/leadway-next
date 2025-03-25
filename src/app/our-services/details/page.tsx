@@ -133,38 +133,42 @@ export default function ImmigrationPage() {
                 type="text"
                 placeholder="Name"
                 className="w-full p-4 border rounded-md"
-                style={{padding: "10px"}}
+                style={{ padding: "10px" }}
                 required
               />
               <input
                 type="email"
                 placeholder="Email"
                 className="w-full p-2 border rounded-md"
-                style={{padding: "10px"}}
+                style={{ padding: "10px" }}
                 required
               />
               <input
                 type="tel"
                 placeholder="Phone"
                 className="w-full p-2 border rounded-md"
-                style={{padding: "10px"}}
+                style={{ padding: "10px" }}
                 required
               />
-              <select className="w-full p-2 border rounded-md"
-              style={{padding: "10px"}}
+              <select
+                className="w-full p-2 border rounded-md"
+                style={{ padding: "10px" }}
               >
                 <option>Select Service</option>
                 <option>Work Permit</option>
                 <option>Study Permit</option>
               </select>
-              <p style={{padding: "10px"}} className="w-full bg-red-600 text-center text-white py-2 rounded-md hover:bg-red-700">
+              <p
+                style={{ padding: "10px" }}
+                className="w-full bg-red-600 text-center text-white py-2 rounded-md hover:bg-red-700"
+              >
                 Send
               </p>
             </form>
             <div className="text-center border-t pt-4">
               <p className="text-gray-700 font-medium">Call for Information</p>
               <p className="text-lg font-bold text-gray-900">
-              +1 (430) 248-5763
+                +1 (430) 248-5763
               </p>
             </div>
           </div>
