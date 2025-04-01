@@ -129,7 +129,7 @@ export default function About() {
               <div className="column-two">
                 <h2 className="in-section-title">Edward Moraless</h2>
                 <p>
-                  Edward Moralessis an attorney and a member of the Ontario Bar
+                  Edward Moraless an attorney and a member of the Ontario Bar
                   Association. He holds a Civil and Common Law degree from the
                   York University Toronto , as well as a Master&apos;s degree in
                   law from imperial college London, in United Kingdom. He is an
