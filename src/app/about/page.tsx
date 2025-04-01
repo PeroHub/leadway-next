@@ -80,36 +80,230 @@ export default function About() {
         </div>
       </div>
 
-      {/* Section 2: Two-column layout */}
-      <div className="section">
-        <div className="base-container w-container">
-          <div className="two-column-wrapper center">
-            <div className="column-two">
-              <h2 className="in-section-title">
-                Options based on your unique circumstances
-              </h2>
-              <p>
-                Navigating the complex world of visas and immigration can be a
-                daunting task. That&apos;s why we&apos;re here to simplify the
-                process and guide you every step of the way. Our experienced
-                team of immigration experts is dedicated to making your journey
-                to a new country as smooth as possible.
-              </p>
-            </div>
-            <div className="column-one">
-              <Image
-                src="https://cdn.prod.website-files.com/651f2c08c5bd81eb296c17aa/652844c535ce8f641b2876fb_pexels-andrea-piacquadio-3764021.webp"
-                alt="Photo"
-                width={635}
-                height={400}
-                loading="lazy"
-                sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, (max-width: 1919px) 535px, 635px"
-                className="about-block-image"
-              />
+      <section>
+        <h3
+          style={{
+            // marginBottom: "20px",
+            textAlign: "center",
+            marginTop: "100px",
+          }}
+        >
+          Our Team
+        </h3>
+        {/* Section 2: Two-column layout */}
+        <div className="section">
+          <div className="base-container w-container">
+            <div className="two-column-wrapper center">
+              <div className="column-two">
+                <h2 className="in-section-title">Kerry Molitor</h2>
+                <p>
+                  Kerry Molitor CEO LEGAL PATHWAY IMMIGRATION SERVICES is an
+                  attorney and a member of the Ontario Bar Association. He holds
+                  a Civil and Common Law degree from the University of Ottawa,
+                  as well as a Master&apos;s degree in law from King&apos;s
+                  College London, in England. He is an experienced and certified
+                  Canadian Immigration Lawyer with an in-depth knowledge of
+                  Canadian Immigration law. My company&apos;s ICCRC
+                  membership ID is R415879
+                </p>
+              </div>
+              <div className="column-one">
+                <Image
+                  // src="https://cdn.prod.website-files.com/651f2c08c5bd81eb296c17aa/652844c535ce8f641b2876fb_pexels-andrea-piacquadio-3764021.webp"
+                  src="/images/kerry.jpg"
+                  alt="Photo"
+                  width={635}
+                  height={400}
+                  loading="lazy"
+                  sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, (max-width: 1919px) 535px, 635px"
+                  className="about-block-image"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        <div className="section">
+          <div className="base-container w-container">
+            {/* <h3 style={{ marginBottom: "20px" }}>Our Team</h3> */}
+            <div className="two-column-wrapper center">
+              <div className="column-two">
+                <h2 className="in-section-title">Edward Moraless</h2>
+                <p>
+                  Edward Moralessis an attorney and a member of the Ontario Bar
+                  Association. He holds a Civil and Common Law degree from the
+                  York University Toronto , as well as a Master&apos;s degree in
+                  law from imperial college London, in United Kingdom. He is an
+                  experienced and certified Canadian Immigration Lawyer with an
+                  in-depth knowledge of Canadian Immigration law.
+                </p>
+              </div>
+              <div className="column-one">
+                <Image
+                  src="/images/visa-ambassador.jpg"
+                  alt="Photo"
+                  width={635}
+                  height={400}
+                  loading="lazy"
+                  sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, (max-width: 1919px) 535px, 635px"
+                  className="about-block-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="section">
+          <div className="base-container w-container">
+            {/* <h3 style={{ marginBottom: "20px" }}>Our Team</h3> */}
+            <div className="two-column-wrapper center">
+              <div className="column-two">
+                <h2 className="in-section-title">Larry Johnson</h2>
+                <p>
+                  Larry Johnson is a consultant with extensive expertise in
+                  legal advisory services. He holds a dual degree in Civil and
+                  Common Law from York University in Toronto and a Master’s
+                  degree in Law from Imperial College London, United Kingdom.
+                  With years of experience in legal consultancy, he specializes
+                  in providing strategic guidance on immigration policies and
+                  regulatory compliance in Canada. Larry has a deep
+                  understanding of Canadian immigration frameworks and offers
+                  tailored solutions to individuals and businesses navigating
+                  the complexities of the system.
+                </p>
+              </div>
+              <div className="column-one">
+                <Image
+                  src="/images/larry.jpg"
+                  alt="Photo"
+                  width={635}
+                  height={400}
+                  loading="lazy"
+                  sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, (max-width: 1919px) 535px, 635px"
+                  className="about-block-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="section">
+          <div className="base-container w-container">
+            {/* <h3 style={{ marginBottom: "20px" }}>Our Team</h3> */}
+            <div className="two-column-wrapper center">
+              <div className="column-two">
+                <h2 className="in-section-title">Mary Robinson</h2>
+                <p>
+                  Mary Robinson as a licensed immigration attorney with dual
+                  specialization in Canadian and USA immigration law, she
+                  delivers authoritative counsel on diverse immigration issues.
+                  With a proven track record of successful visa applications,
+                  permanent residencies, and complex case resolutions, Mary
+                  provides personalized strategies tailored to each
+                  client&apos;s unique immigration goals.
+                </p>
+              </div>
+              <div className="column-one">
+                <Image
+                  src="/images/mary.jpg"
+                  alt="Photo"
+                  width={635}
+                  height={400}
+                  loading="lazy"
+                  sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, (max-width: 1919px) 535px, 635px"
+                  className="about-block-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="section">
+          <div className="base-container w-container">
+            {/* <h3 style={{ marginBottom: "20px" }}>Our Team</h3> */}
+            <div className="two-column-wrapper center">
+              <div className="column-two">
+                <h2 className="in-section-title">Martin Graham</h2>
+                <p>
+                  Martin Graham is an immigration officer with extensive
+                  experience in immigration policies and regulations. He holds a
+                  dual degree in Civil and Common Law from the University of
+                  British Columbia and a Master’s degree in Law from the
+                  University of Edinburgh, United Kingdom. With a strong
+                  background in immigration enforcement and policy
+                  implementation, he is dedicated to ensuring compliance with
+                  Canadian immigration laws. Martin plays a key role in
+                  assessing applications, guiding applicants through the
+                  immigration process, and upholding legal standards in
+                  immigration services.
+                </p>
+              </div>
+              <div className="column-one">
+                <Image
+                  src="/images/martin_graham.jpg"
+                  alt="Photo"
+                  width={350}
+                  height={350}
+                  loading="lazy"
+                  sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, (max-width: 1919px) 535px, 635px"
+                  className="about-block-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className=""
+          style={{
+            maxWidth: "70vw",
+            margin: "0 auto",
+            // border: "1px solid red",
+          }}
+        >
+          <h2
+            className="in-section-title text-center"
+            style={{ margin: "30px 0" }}
+          >
+            Awards
+          </h2>
+          <div className="grid lg:grid-cols-3 gap-2">
+            <Image
+              src="/images/award1.jpg"
+              alt="Photo"
+              width={350}
+              height={350}
+              loading="lazy"
+              sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, (max-width: 1919px) 535px, 635px"
+              // className="about-block-image"
+            />
+            <Image
+              src="/images/award2.jpg"
+              alt="Photo"
+              width={350}
+              height={350}
+              loading="lazy"
+              sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, (max-width: 1919px) 535px, 635px"
+              // className="about-block-image"
+            />
+            <Image
+              src="/images/award3.jpg"
+              alt="Photo"
+              width={350}
+              height={350}
+              loading="lazy"
+              sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, (max-width: 1919px) 535px, 635px"
+              // className="about-block-image"
+            />
+            <Image
+              src="/images/award4.jpg"
+              alt="Photo"
+              width={350}
+              height={350}
+              loading="lazy"
+              sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, (max-width: 1919px) 535px, 635px"
+              // className="about-block-image"
+            />
+            s
+          </div>
+        </div>
+      </section>
 
       {/* Section 3: Advantages */}
       <div className="section primary-light-background">
