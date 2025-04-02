@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { FaInstagram } from "react-icons/fa";
 // import NavigationMenu from '../components/NavigationMenu'; // Import your navigation menu component
 // import FooterSection from '../components/FooterSection'; // Import your footer component
 
@@ -95,16 +96,17 @@ export default function About() {
           <div className="base-container w-container">
             <div className="two-column-wrapper center">
               <div className="column-two">
-                <h2 className="in-section-title">Kerry Molitor</h2>
+                <h2 className="in-section-title">Kerry Nathan</h2>
                 <p>
-                  Kerry Molitor CEO LEGAL PATHWAY IMMIGRATION SERVICES is an
+                  Kerry Nathan CEO LEGAL PATHWAY IMMIGRATION SERVICES is an
                   attorney and a member of the Ontario Bar Association. He holds
                   a Civil and Common Law degree from the University of Ottawa,
                   as well as a Master&apos;s degree in law from King&apos;s
                   College London, in England. He is an experienced and certified
                   Canadian Immigration Lawyer with an in-depth knowledge of
-                  Canadian Immigration law. My company&apos;s ICCRC
-                  membership ID is R415879
+                  Canadian Immigration law.
+                  {/* My company&apos;s ICCRC
+                  membership ID is R415879 */}
                 </p>
               </div>
               <div className="column-one">
@@ -128,6 +130,7 @@ export default function About() {
             <div className="two-column-wrapper center">
               <div className="column-two">
                 <h2 className="in-section-title">Edward Moraless</h2>
+
                 <p>
                   Edward Moraless an attorney and a member of the Ontario Bar
                   Association. He holds a Civil and Common Law degree from the
@@ -156,7 +159,12 @@ export default function About() {
             {/* <h3 style={{ marginBottom: "20px" }}>Our Team</h3> */}
             <div className="two-column-wrapper center">
               <div className="column-two">
-                <h2 className="in-section-title">Larry Johnson</h2>
+                <div className="flex gap-4 items-center">
+                  <h2 className="in-section-title">Larry Johnson</h2>
+                  <Link href={"https://www.instagram.com/larryjohnson.11"}>
+                    <FaInstagram size={24} />
+                  </Link>
+                </div>
                 <p>
                   Larry Johnson is a consultant with extensive expertise in
                   legal advisory services. He holds a dual degree in Civil and
@@ -220,7 +228,13 @@ export default function About() {
             {/* <h3 style={{ marginBottom: "20px" }}>Our Team</h3> */}
             <div className="two-column-wrapper center">
               <div className="column-two">
-                <h2 className="in-section-title">Martin Graham</h2>
+                <div className="flex gap-4 items-center">
+                  <h2 className="in-section-title">Martin Graham</h2>
+                  <Link href={"https://www.instagram.com/martin_graham092"}>
+                    <FaInstagram size={24} />
+                  </Link>
+                </div>
+                {/* <h2 className="in-section-title">Martin Graham</h2> */}
                 <p>
                   Martin Graham is an immigration officer with extensive
                   experience in immigration policies and regulations. He holds a
