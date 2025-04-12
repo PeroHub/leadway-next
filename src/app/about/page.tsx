@@ -124,25 +124,38 @@ export default function About() {
             </div>
           </div>
         </div>
+
         <div className="section">
           <div className="base-container w-container">
             {/* <h3 style={{ marginBottom: "20px" }}>Our Team</h3> */}
             <div className="two-column-wrapper center">
               <div className="column-two">
-                <h2 className="in-section-title">Edward Moraless</h2>
-
+                <div className="flex gap-4 items-center">
+                  <h2 className="in-section-title">Andrew Runge</h2>
+                  <Link
+                    href={
+                      "https://www.instagram.com/andrew_s.runge?igsh=ZnFzdHMzZG5nc3Vl"
+                    }
+                  >
+                    <FaInstagram size={24} />
+                  </Link>
+                </div>
                 <p>
-                  Edward Moraless an attorney and a member of the Ontario Bar
-                  Association. He holds a Civil and Common Law degree from the
-                  York University Toronto , as well as a Master&apos;s degree in
-                  law from imperial college London, in United Kingdom. He is an
-                  experienced and certified Canadian Immigration Lawyer with an
-                  in-depth knowledge of Canadian Immigration law.
+                  Andrew Runge is a consultant with extensive expertise in legal
+                  advisory services. He holds a dual degree in Civil and Common
+                  Law from York University in Toronto and a Master’s degree in
+                  Law from Imperial College London, United Kingdom. With years
+                  of experience in legal consultancy, he specializes in
+                  providing strategic guidance on immigration policies and
+                  regulatory compliance in Canada. Andrew has a deep
+                  understanding of Canadian immigration frameworks and offers
+                  tailored solutions to individuals and businesses navigating
+                  the complexities of the system.
                 </p>
               </div>
               <div className="column-one">
                 <Image
-                  src="/images/visa-ambassador.jpg"
+                  src="/images/andrew.jpg"
                   alt="Photo"
                   width={635}
                   height={400}
