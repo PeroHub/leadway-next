@@ -28,7 +28,7 @@ export default function EligibilitySection() {
           style={{ opacity: 1 }}
           className="buttons-wrapper"
         >
-          <a href="/about" className="primary-button w-button">
+          <a href="/apply" className="primary-button w-button">
             Check Eligibility
           </a>
         </div>
