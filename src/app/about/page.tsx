@@ -445,10 +445,7 @@ export default function About() {
                 most suitable visa option based on your needs.
               </p>
               <div className="button-wrapper">
-                <Link
-                  href="/visa-application"
-                  className="primary-button w-button"
-                >
+                <Link href="/apply" className="primary-button w-button">
                   View all
                 </Link>
               </div>
