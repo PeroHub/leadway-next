@@ -1,9 +1,9 @@
 import mongoose, { Schema, Document } from "mongoose";
 
 interface IDocument {
-  fieldName: string;  // e.g. "Upload your International Passport"
-  fileUrl: string;    // e.g. "/uploads/abc123.pdf"
-  fileName: string;   // original file name
+  fieldName: string; // e.g. "Upload your International Passport"
+  fileUrl: string; // e.g. "/uploads/abc123.pdf"
+  fileName: string; // original file name
 }
 
 export interface ISubmission extends Document {
@@ -12,6 +12,8 @@ export interface ISubmission extends Document {
   lastName: string;
   email: string;
   additionalInfo?: string;
+  status?: string;
+  trackingCode?: string;
   documents: IDocument[];
   createdAt: Date;
 }
@@ -28,6 +30,8 @@ const SubmissionSchema = new Schema<ISubmission>({
   lastName: { type: String, required: true },
   email: { type: String, required: true },
   additionalInfo: { type: String },
+  status: { type: String, required: true },
+  trackingCode: { type: String, required: true },
   documents: [DocumentSchema],
   createdAt: { type: Date, default: Date.now },
 });

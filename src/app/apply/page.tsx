@@ -152,6 +152,7 @@ export default function Apply() {
   // React Query Mutation using Axios to post FormData
   const applyMutation = useMutation({
     mutationFn: async (formData: FormData) => {
+      console.log(formData);
       const response = await axios.post("/api/apply-visa", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -159,9 +160,9 @@ export default function Apply() {
       });
       return response.data;
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       toast.success(
-        "Your Application was submitted successfully. You will be contacted shortly via the email you provided."
+        `Your Application was submitted successfully. Your tracking code is: ${data.trackingCode}. You will be contacted shortly via the email you provided.`
       );
     },
     onError: (error: unknown) => {
@@ -293,7 +294,11 @@ export default function Apply() {
     e.preventDefault();
 
     const formData = new FormData();
+    const trackingCode = `TRK-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
+
     formData.append("sectionTitle", sectionTitle);
+    formData.append("trackingCode", trackingCode);
+    formData.append("status", "pending");
 
     // Append text values
     const textData = additionalInfo[sectionTitle] || {};
@@ -308,6 +313,8 @@ export default function Apply() {
         formData.append(fieldName, file);
       });
     }
+
+    console.log("Form Data:", formData);
 
     // Submit the form data using our React Query mutation
     applyMutation.mutate(formData);
