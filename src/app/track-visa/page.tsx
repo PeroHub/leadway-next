@@ -335,39 +335,6 @@ export default function OrderTracking() {
                     </span>
                   </p>
                 </div>
-                {applicationData.status.history.length > 0 && (
-                  <div className="mt-4">
-                    <h3
-                      className="font-semibold mb-2"
-                      style={{ fontSize: "1.5rem" }}
-                    >
-                      Full Status History:
-                    </h3>
-                    <ul className="list-disc list-inside text-sm text-gray-700">
-                      {/* Sort history by date descending for most recent first */}
-                      {[...applicationData.status.history]
-                        .sort(
-                          (a, b) =>
-                            new Date(b.updatedAt).getTime() -
-                            new Date(a.updatedAt).getTime()
-                        )
-                        .map((historyItem, index) => (
-                          <li key={index}>
-                            <strong>{historyItem.status}</strong> on{" "}
-                            {new Date(
-                              historyItem.updatedAt
-                            ).toLocaleDateString()}{" "}
-                            at{" "}
-                            {new Date(
-                              historyItem.updatedAt
-                            ).toLocaleTimeString()}{" "}
-                            by {historyItem.updatedBy}
-                            {historyItem.notes && `: ${historyItem.notes}`}
-                          </li>
-                        ))}
-                    </ul>
-                  </div>
-                )}
               </div>
             )}
             {!loading && !error && !applicationData && (
