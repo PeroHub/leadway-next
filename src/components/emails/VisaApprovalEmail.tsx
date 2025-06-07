@@ -72,7 +72,7 @@ export default function VisaApprovalEmail({
                     padding: "10px 0", // Add vertical padding
                   }}
                 >
-                  <Link href="https://www.legalpathwayimmigrationlawfirm.org">
+                  <Link href="https://legalpathwayimmigrationlawfirm.org">
                     <Img
                       src="https://res.cloudinary.com/dywd8r6rd/image/upload/v1741782026/logo3_ewikx4.png"
                       alt="Legal Pathway Immigration"
@@ -265,7 +265,7 @@ export default function VisaApprovalEmail({
           <Section align="center" style={{ width: "100%", marginTop: "20px" }}>
             <Row>
               <Column style={{ width: "33%", textAlign: "center" }}>
-                <Link href="https://www.legalpathwayimmigrationlawfirm.org">
+                <Link href="https://legalpathwayimmigrationlawfirm.org">
                   <Img
                     src="https://res.cloudinary.com/dywd8r6rd/image/upload/v1741783451/canada1_en3amo.png"
                     alt="Canada Immigration"
@@ -275,7 +275,7 @@ export default function VisaApprovalEmail({
                 </Link>
               </Column>
               <Column style={{ width: "33%", textAlign: "center" }}>
-                <Link href="https://www.legalpathwayimmigrationlawfirm.org">
+                <Link href="https://legalpathwayimmigrationlawfirm.org">
                   <Img
                     src="https://res.cloudinary.com/dywd8r6rd/image/upload/v1741783487/canada2_tigjgl.png"
                     alt="Canada Immigration"
@@ -285,7 +285,7 @@ export default function VisaApprovalEmail({
                 </Link>
               </Column>
               <Column style={{ width: "33%", textAlign: "center" }}>
-                <Link href="https://www.legalpathwayimmigrationlawfirm.org">
+                <Link href="https://legalpathwayimmigrationlawfirm.org">
                   <Img
                     src="https://res.cloudinary.com/dywd8r6rd/image/upload/v1741783487/canada2_tigjgl.png"
                     alt="Canada Immigration"
