@@ -105,7 +105,7 @@ export default function VisaApprovalEmail({
               </tr>
             </table>
             <hr />
-            <Link href="https://www.legalpathwayimmigrationlawfirm.org/eligible">
+            <Link href="https://legalpathwayimmigrationlawfirm.org">
               <Img
                 src="https://res.cloudinary.com/dywd8r6rd/image/upload/v1742305729/barcode_eb4zjo.png"
                 alt="Barcode"
